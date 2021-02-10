@@ -1,0 +1,141 @@
+
+        html{
+            background-color: rgb(165, 163, 162);
+            font-family: sans-serif;
+        }
+        body{
+            width:500px;
+            height:auto;
+            background-color: rgb(252, 253, 253);
+            margin:auto;
+            box-sizing: border-box;
+            background:linear-gradient(orange,green);
+        }
+        h1{
+            text-align: center;
+            padding-bottom: 5px;
+        }
+
+        li{
+            list-style:none;
+        }
+        
+        a{
+            text-decoration: none;
+        }
+    
+       .right_corner{
+           position:relative;
+           width:90px;
+           height: 30px;
+           top:-112px;
+           left:360px;
+           font-size: 1.2rem;
+           text-align: center;
+           padding:auto;
+           font-weight: 900;
+           color:white;
+       }
+      
+       input{ 
+          outline: none;
+       }
+       option,select,input{
+           outline:none;
+           border:2px solid transparent;
+           background-color: transparent;
+       }
+       /* box1 */
+       #box1{
+        width: 100%;
+        border-bottom:2px solid black;
+        box-sizing: border-box;
+        border-top: 2px solid black;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        margin-top: -10px;
+        font-weight: 800;
+        font-family: sans-serif;
+    }
+    #box1 input{
+        font-size: 1.2rem;
+    }
+    #box1:hover{
+        background-color: rgba(88, 117, 155, 0.39);
+    }
+    #button1 button:nth-child(1){
+        margin-left:90px;
+    }
+    #button1{
+        border-bottom:2px solid black;
+        padding-bottom: 15px;
+    }
+    #button1 button{
+        width:150px;
+        height: 40px;
+        font-size: 1.1em;
+        box-sizing: border-box;
+        font-weight: 900;
+        margin-top: 10px;
+        background:linear-gradient(pink,blue);
+        color:white;
+    }
+
+       /* box2 */
+       #box2{
+           width:100%;
+           border-bottom: 2px solid black;;
+           display: flex;
+           box-sizing: border-box;
+           font-weight: 900;
+       }
+        
+       #box2 div{
+           width:50%;
+           box-sizing: border-box;
+         padding:10px;
+         
+       }
+       #box2 div:nth-child(1){
+           border-right: 2px solid black;
+       }
+       #box2 div:nth-child(1):hover{
+           background-color: rgba(75, 73, 151, 0.329);
+       }
+       #box2 div:nth-child(2):hover{
+           background-color: rgba(75, 73, 151, 0.329);
+       }
+   
+       hr{
+           width: 108.4%;
+           margin-left:-40px;
+           padding:0px;
+           color:black;
+           margin-top:-100px;
+       }
+       #check{
+           width:50px;
+           height:50px;
+           border-radius: 50%;
+           margin-left:-15px;
+           font-weight: 900;
+           
+       }
+       #descr,#dat{
+           margin-left:60px;
+           position: relative;
+           top:-60px;
+       }
+       #descr{
+           font-size: 1.1rem;
+           font-weight: 700;
+       }
+       #dat{
+           margin-top:-15px;
+           font-size: .9rem;
+           font-weight: 500;
+       }
+       #delete{
+           font-size: 1.4rem; 
+       }

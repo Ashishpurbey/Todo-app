@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title %></title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    
+</head>
+<body>
+    <div>
+        <h1>TODO App</h1>
+    </div>
+
+    <!-- create form to store data -->
+    <form action="/create-work" method="POST">
+        <!-- description of the work -->
+        <div id=box1>
+            <label for="description">DESCRIPTION</label><br>
+            <input id='description' type='text' name='description' placeholder='what do you need to do ?'  requiured><br>    
+        </div>
+        
+        <!-- category and date  -->
+        <div id=box2>
+            <div>
+                <label for="category">CATEGORY</label><br>
+                <select name="category" id="category">
+                    <option value="work">Choose a category</option>
+                    <option value="work">Work</option>
+                    <option value="school">School</option>
+                    <option value="personal">Personal</option>
+                    <option value="cleaning">Cleaning</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            <div>
+                <label for="date">DUE DATE</label><br>
+                <input type='date' name='date' required>
+            </div>
+        </div>
+        <!-- button to add task and delete all element -->
+        <div id=button1>
+            <button type='submit'><i class='fas fa-plus'></i>&nbsp&nbsp ADD TASK</button>
+            <button type='submit'><a href="/delete-all"><i class="far fa-trash-alt"></i>&nbsp&nbspDelete ALL</a></button>
+        </div>
+    </form>
+    <div>
+        <ul>
+            <!-- printing all elements from the database -->
+            <% for (let i of work_detail){ %>
+                <li>
+                    <div>
+                        <button type=submit id='check' value=i._id>
+                            <a id=delete href='/delete-single-element/?id=<%= i._id%>'><i class="far fa-trash-alt"></i></button></a>
+                        </button>
+                        <p id=descr><%=i.description%></p>
+                        <p id=dat ><i class='far fa-calendar-alt'>&nbsp&nbsp&nbsp</i><%= i.date %></p>
+                           <!-- checking the category and according to that set the color -->
+                       <% if(i.category =='work'){ %>
+                             <p class='right_corner' style='background-color: blue;'><%=i.category%></p>
+                       <% }%>
+
+                       <% if(i.category =='personal'){ %>
+                            <p class='right_corner' style='background-color: red;'><%=i.category%></p>
+                        <% }%>
+
+                        <% if(i.category =='cleaning'){ %>
+                            <p class='right_corner' style='background-color: rgb(13, 105, 133);'><%=i.category%></p>
+                        <% }%>
+
+                        <% if(i.category =='school'){ %>
+                            <p class='right_corner' style='background-color: yellow;'><%=i.category%></p>
+                        <% }%>
+
+                        <% if(i.category =='others'){ %>
+                            <p class='right_corner' style='background-color: rgba(89, 16, 148, 0.89);'><%=i.category%></p>
+                        <% }%>  
+                            <hr>  
+                    </div>
+                </li>
+            <%}%>
+        </ul>
+    </div> 
+    
+    <script type='text/javascript' src='/js/home.js'></script>
+    <script src="jquery-3.5.1.js"></script>
+</body>
+</html>
